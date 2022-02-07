@@ -18,10 +18,13 @@ jobs:
           node-version: "16.13.2"
           cache: npm
 
+      - name: install dependency
+        run: yarn install
+
       - name: build
         run: yarn run build
 
-      # GitHub Pagesの では_から始まるディレクトリが無視される。
+      # GitHub Pagesのは_から始まるディレクトリが無視される。
       # これを回避するために.nojekyllファイルを作成する。
       - name: add nojekyll
         run: touch ./out/.nojekyll
