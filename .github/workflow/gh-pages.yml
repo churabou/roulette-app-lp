@@ -1,0 +1,36 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.13.2"
+          cache: npm
+
+      - name: build
+        run: yarn run build
+
+      # GitHub Pagesの では_から始まるディレクトリが無視される。
+      # これを回避するために.nojekyllファイルを作成する。
+      - name: add nojekyll
+        run: touch ./out/.nojekyll
+
+      # gh-pagesブランチにoutディレクトリの中身をプッシュする
+      # gh-pagesブランチは自動的に作成される
+      # https://github.com/peaceiris/actions-gh-pages
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
