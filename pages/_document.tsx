@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Murecho:wght@300&family=Noto+Sans+JP&display=swap"
           rel="stylesheet"
         />
+        <link href="/reset.css" rel="stylesheet" />
       </Head>
       <body>
         <Main />
