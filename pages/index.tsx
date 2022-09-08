@@ -18,33 +18,74 @@ const Home: NextPage = () => {
       </Head>
       <div className="h-screen pb-14 bg-right bg-cover">
         <div className="container pt-24 md:pt-48 px-12 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-          <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-            <h1 className="my-8 text-3xl md:text-5xl text-title-gradient font-bold leading-tight text-center md:text-left ">
-              迷ったときのルーレット!
-            </h1>
-            <p className="leading-normal text-base md:text-md mb-8 text-center md:text-left">
-              ルーレット!はシンプルなルーレットアプリです。
-              ランチ、お出かけ先など迷ったときに使ってみてください。
-              いろんなところ使えて意外と便利です。
-            </p>
-            <p className={css``}>アプリをダウンロード</p>
-            <div
+          <div
+            className={css`
+              padding: 48px;
+            `}
+          >
+            <h1
               className={css`
-                width: 100px;
-                height: 50px;
-                justify-content: center;
+                background: linear-gradient(to right bottom, #058ef8, #02eefe);
+                background-clip: text;
+                color: transparent;
+                font-size: 48px;
+                font-weight: bold;
+
+                padding-top: 24px;
+                padding-bottom: 24px;
               `}
             >
-              <a href={appStoreLink}>
-                <img src="app_store.svg" className="h-12 pr-4" />
-              </a>
-              <a href={playStoreLink}>
-                <img src="play_store.svg" className="h-12 pr-4" />
-              </a>
+              迷ったときのルーレット!
+            </h1>
+            <p
+              className={css`
+                font-size: 20px;
+                line-height: 1.8;
+              `}
+            >
+              ルーレット!はシンプルなルーレットアプリです。
+              <br />
+              ランチやお出かけ先など迷ったときに使ってみてください。
+            </p>
+            <div>
+              <p
+                className={css`
+                  padding-top: 16px;
+                  padding-bottom: 16px;
+                `}
+              >
+                アプリをダウンロード
+              </p>
+              <div
+                className={css`
+                  height: 50px;
+                  justify-content: center;
+                  a {
+                    display: inline-block;
+                    img {
+                      height: 50px;
+                    }
+
+                    &:first-child {
+                      margin-right: 12px;
+                    }
+                  }
+                `}
+              >
+                <a href={appStoreLink}>
+                  <img src="app_store.svg" className="h-12 pr-4" />
+                </a>
+                <a href={playStoreLink}>
+                  <img src="play_store.svg" className="h-12 pr-4" />
+                </a>
+              </div>
             </div>
           </div>
-
-          <div className="">
+          <div
+            className={css`
+              margin: 0px auto;
+            `}
+          >
             <img
               className={css`
                 width: 300px;
