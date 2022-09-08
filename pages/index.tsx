@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -26,11 +27,14 @@ const Home: NextPage = () => {
               ランチ、お出かけ先など迷ったときに使ってみてください。
               いろんなところ使えて意外と便利です。
             </p>
-
-            <p className="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left">
-              Download our app:
-            </p>
-            <div className="flex w-full justify-center md:justify-start pb-24 lg:pb-0">
+            <p className={css``}>アプリをダウンロード</p>
+            <div
+              className={css`
+                width: 100px;
+                height: 50px;
+                justify-content: center;
+              `}
+            >
               <a href={appStoreLink}>
                 <img src="app_store.svg" className="h-12 pr-4" />
               </a>
@@ -40,13 +44,15 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="w-full xl:w-3/5 py-6">
-            <img className="w-80 mx-auto mt-4 lg:mr-0" src="./preview1.png" />
+          <div className="">
+            <img
+              className={css`
+                width: 300px;
+              `}
+              src="./preview1.png"
+            />
           </div>
         </div>
-      </div>
-      <div className="mx-auto">
-        <AccordionDemo />
       </div>
     </div>
   );
